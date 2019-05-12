@@ -35,6 +35,16 @@ if (action === 'generate' && instance === 'page') {
     return require('./commands/generate-page.command').run(name, options);
 }
 
+if (action === 'remove' && instance === 'page') {
+    return require('./commands/remove-page.command').run(name, options);
+}
+
 console.log(`Usage: ${argv.$0} [action] [instance] [name]`);
-console.log(`Usage: ${argv.$0} generate component HomeSlider`);
-console.log(`Usage: ${argv.$0} generate component HomeSlider --theme=true --scss=false`);
+console.log(`       ${argv.$0} init`);
+console.log(`       ${argv.$0} init --config=/Users/olehpolishchuk/.nectar_config`);
+console.log(`       ${argv.$0} reinit --config=/Users/olehpolishchuk/.nectar_config`);
+console.log(`       ${argv.$0} generate component HomeSlider`);
+console.log(`       ${argv.$0} generate component HomeSlider --theme=true --scss=false`);
+console.log(`       ${argv.$0} remove component HomeSlider`);
+console.log(`       ${argv.$0} generate page Home`);
+console.log(`       ${argv.$0} remove page Home`);

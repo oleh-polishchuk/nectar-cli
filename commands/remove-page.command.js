@@ -8,7 +8,7 @@ module.exports.run = (name = "", options = {}) => {
     const brand = options.brand || config.getConfig().defaultBrand;
     const projectDir = config.getConfig().projectDir;
 
-    const componentsDir = path.resolve(projectDir, brand, 'Components');
+    const componentsDir = path.resolve(projectDir, brand, 'Pages');
     const componentDir = path.resolve(componentsDir, componentName);
     const componentPath = path.resolve(componentDir, 'index.js');
     const stylePath = path.resolve(componentDir, 'style.scss');

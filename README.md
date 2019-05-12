@@ -13,7 +13,7 @@ The Nectar React CLI is a command-line interface tool that you use to initialize
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g nectar
+$ npm install -g nectar-cli
 ```
 
 <!-- usagestop -->

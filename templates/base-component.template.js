@@ -10,6 +10,10 @@ const ${options.name} = () => (
     </section>
 );
 
+${options.name}.defaultProps = {};
+
+${options.name}.propTypes = {};
+
 export default ${options.name};
 `
 };

@@ -9,10 +9,10 @@ const instance = argv._[ 1 ];
 const name = argv._[ 2 ];
 
 const options = {
-    theme: !!argv.theme,
-    scss: !!argv.scss,
-    brand: !!argv.brand,
-    config: !!argv.config,
+    theme: argv.theme && JSON.parse(argv.theme),
+    scss: argv.scss && JSON.parse(argv.scss),
+    brand: argv.brand,
+    config: argv.config,
 };
 
 if (action === 'init' || !fs.existsSync(`${home}/.nectar_config`)) {

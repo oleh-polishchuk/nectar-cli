@@ -1,6 +1,6 @@
 {
   "name": "nectar-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Nectar React CLI",
   "main": "index.js",
   "scripts": {

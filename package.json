@@ -13,7 +13,8 @@
     "url": "https://github.com/oleh-polishchuk/nectar.git"
   },
   "bin": {
-    "nectar": "./index.js"
+    "nectar": "./index.js",
+    "nectar-cli": "./index.js"
   },
   "dependencies": {
     "xregexp": "4.2.4",

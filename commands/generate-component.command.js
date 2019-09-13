@@ -14,7 +14,10 @@ module.exports.run = (name = "", options = {}) => {
     const scss = options.scss !== undefined ? options.scss : config.getConfig().scss;
     const projectDir = config.getConfig().projectDir;
 
-    const componentsDir = path.resolve(projectDir, brand, 'Components');
+    let componentsDir = path.resolve(projectDir, brand, 'Components');
+    if (options.path && fs.existsSync(options.path)) {
+        componentsDir = options.path;
+    }
     const componentDir = path.resolve(componentsDir, componentName);
     const componentPath = path.resolve(componentDir, 'index.js');
     const stylePath = path.resolve(componentDir, 'style.scss');

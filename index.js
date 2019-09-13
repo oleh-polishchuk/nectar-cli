@@ -11,6 +11,7 @@ const name = argv._[ 2 ];
 const options = {
     theme: argv.theme && JSON.parse(argv.theme),
     scss: argv.scss && JSON.parse(argv.scss),
+    path: argv.path,
     brand: argv.brand,
     config: argv.config,
 };

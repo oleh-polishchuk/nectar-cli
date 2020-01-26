@@ -8,9 +8,10 @@ module.exports.run = (options = {}) => {
         fs.writeFileSync(config, JSON.stringify({
             projectDir: `${home}/IdeaProjects/backend/www/app/react/`,
             defaultName: 'BaseComponent1',
-            defaultBrand: 'Bundle',
+            defaultBrand: 'Nectar',
             theme: false,
             scss: true,
+            test: true,
         }, null, 2), { flag: 'wx' });
         console.log(`Default config was successfully initialized!`);
     }

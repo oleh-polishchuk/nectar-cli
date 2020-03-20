@@ -14,5 +14,9 @@ module.exports.run = (options = {}) => {
             test: true,
         }, null, 2), { flag: 'wx' });
         console.log(`Default config was successfully initialized!`);
+        console.log(`${config} `.padEnd(44, "="));
+        console.log(fs.readFileSync(config, 'utf8'));
+        console.log(`============================================`);
+        console.log(`Please update project dir to your own!`)
     }
 };

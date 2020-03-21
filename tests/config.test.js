@@ -1,7 +1,7 @@
 const fs = require('fs');
 const { getConfig, getConfigPath } = require("../common/config");
 
-const ABSOLUTE_CONFIG_PATH = '/Users/olehpolishchuk/.nectar_config';
+const ABSOLUTE_CONFIG_PATH = `${process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE}/.nectar_config`;
 
 describe('config', () => {
     describe('getConfig', () => {

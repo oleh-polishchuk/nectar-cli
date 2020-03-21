@@ -42,7 +42,7 @@ describe('config', () => {
 
         test('should return default config path', () => {
             const path = getConfigPath();
-            expect(path).toBe('/Users/olehpolishchuk/.nectar_config');
+            expect(path).toBe(ABSOLUTE_CONFIG_PATH);
         });
     })
 });

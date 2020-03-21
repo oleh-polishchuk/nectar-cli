@@ -17,36 +17,30 @@ const options = {
     config: argv.config,
 };
 
-if (action === 'init' || !fs.existsSync(`${home}/.nectar_config`)) {
-    return require('./commands/init.command').run(options);
+if (!fs.existsSync(`${home}/.nectar_config`)) {
+    require('./commands/init.command').run(options);
 }
 
-if (action === 'reinit') {
-    return require('./commands/reinit.command').run(options);
+if (action === 'set') {
+    return require('./commands/set.command').run(instance, name, options);
 }
 
-if (action === 'generate' && instance === 'component') {
-    return require('./commands/generate-component.command').run(name, options);
-}
+const commandPath = instance
+    ? `./commands/${action}-${instance}.command.js`
+    : `./commands/${action}.command.js`;
 
-if (action === 'remove' && instance === 'component') {
-    return require('./commands/remove-component.command').run(name, options);
-}
+try {
+    require(commandPath).run(name, options);
+} catch (e) {
+    console.error(`Error: ${e.message}`);
 
-if (action === 'generate' && instance === 'page') {
-    return require('./commands/generate-page.command').run(name, options);
+    console.log(`Usage: ${argv.$0} [action] [instance] [name]`);
+    console.log(`       ${argv.$0} init`);
+    console.log(`       ${argv.$0} init --config=/Users/olehpolishchuk/.nectar_config`);
+    console.log(`       ${argv.$0} reinit --config=/Users/olehpolishchuk/.nectar_config`);
+    console.log(`       ${argv.$0} generate component HomeSlider`);
+    console.log(`       ${argv.$0} generate component HomeSlider --theme=true --scss=false`);
+    console.log(`       ${argv.$0} remove component HomeSlider`);
+    console.log(`       ${argv.$0} generate page Home`);
+    console.log(`       ${argv.$0} remove page Home`);
 }
-
-if (action === 'remove' && instance === 'page') {
-    return require('./commands/remove-page.command').run(name, options);
-}
-
-console.log(`Usage: ${argv.$0} [action] [instance] [name]`);
-console.log(`       ${argv.$0} init`);
-console.log(`       ${argv.$0} init --config=/Users/olehpolishchuk/.nectar_config`);
-console.log(`       ${argv.$0} reinit --config=/Users/olehpolishchuk/.nectar_config`);
-console.log(`       ${argv.$0} generate component HomeSlider`);
-console.log(`       ${argv.$0} generate component HomeSlider --theme=true --scss=false`);
-console.log(`       ${argv.$0} remove component HomeSlider`);
-console.log(`       ${argv.$0} generate page Home`);
-console.log(`       ${argv.$0} remove page Home`);

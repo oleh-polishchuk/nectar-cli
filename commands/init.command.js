@@ -1,11 +1,12 @@
 const fs = require('fs');
 const { home } = require('../common/utils');
+const { getConfigPath } = require('../common/config');
 
 module.exports.run = (options = {}) => {
-    const config = options.config || `${home}/.nectar_config`;
+    const configPath = getConfigPath(options);
 
-    if (!fs.existsSync(config)) {
-        fs.writeFileSync(config, JSON.stringify({
+    if (!fs.existsSync(configPath)) {
+        fs.writeFileSync(configPath, JSON.stringify({
             projectDir: `${home}/IdeaProjects/backend/www/app/react/`,
             defaultName: 'BaseComponent1',
             defaultBrand: 'Nectar',
@@ -14,8 +15,8 @@ module.exports.run = (options = {}) => {
             test: true,
         }, null, 2), { flag: 'wx' });
         console.log(`Default config was successfully initialized!`);
-        console.log(`${config} `.padEnd(44, "="));
-        console.log(fs.readFileSync(config, 'utf8'));
+        console.log(`${configPath} `.padEnd(44, '='));
+        console.log(fs.readFileSync(configPath, 'utf8'));
         console.log(`============================================`);
         console.log(`Please update project dir to your own!`)
     }

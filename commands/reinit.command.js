@@ -1,11 +1,12 @@
 const fs = require('fs');
 const { home } = require('../common/utils');
+const { getConfigPath } = require('../common/config');
 
 module.exports.run = (options = {}) => {
-    const config = options.config || `${home}/.nectar_config`;
+    const configPath = getConfigPath(options);
 
-    fs.unlinkSync(config);
-    fs.writeFileSync(config, JSON.stringify({
+    fs.unlinkSync(configPath);
+    fs.writeFileSync(configPath, JSON.stringify({
         projectDir: `${home}/IdeaProjects/backend/www/app/react/`,
         defaultName: 'BaseComponent1',
         defaultBrand: 'Nectar',

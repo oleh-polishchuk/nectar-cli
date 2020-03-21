@@ -9,7 +9,7 @@ module.exports.getConfig = () => {
     }
 };
 
-module.exports.getConfigPath = (options) => {
+module.exports.getConfigPath = (options = {}) => {
     return options.config || `${home}/.nectar_config`;
 };
 

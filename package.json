@@ -4,7 +4,7 @@
   "description": "Nectar React CLI",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +19,8 @@
   "dependencies": {
     "xregexp": "4.2.4",
     "yargs": "13.2.2"
+  },
+  "devDependencies": {
+    "jest": "25.1.0"
   }
 }

@@ -3,6 +3,8 @@ nectar
 
 The Nectar React CLI is a command-line interface tool that you use to initialize, develop, and maintain React application.
 
+[![Build Status](https://travis-ci.org/oleh-polishchuk/nectar-cli.png?branch=master)](https://travis-ci.org/oleh-polishchuk/nectar-cli)
+
 [![License](https://img.shields.io/npm/l/nectar.svg)](https://github.com/oleh-polishchuk/nectar-react-cli/blob/master/package.json)
 
 <!-- toc -->

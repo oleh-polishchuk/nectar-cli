@@ -27,3 +27,4 @@ $ npm install -g nectar-cli
 * `nectar generate component HomeSlider --scss=false`
 * `nectar remove component HomeSlider`
 * `nectar generate page Home`
+
